@@ -61,7 +61,7 @@
 
       </div>
 
-      <audio autoplay loop>
+      <audio id="backgroundMusic" autoplay loop>
         <source src="music/bouncy-music.mp3" type="audio/mp3">
       </audio>
 
@@ -78,6 +78,10 @@
             boxes[box].insertAdjacentHTML('beforeend', faceMarkup);
           }
         }
+
+        //Lower Audio Volume
+        var vid = document.getElementById("backgroundMusic");
+        vid.volume = 0.1;
       })();
     </script>
 
