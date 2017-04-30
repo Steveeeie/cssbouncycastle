@@ -1,0 +1,48 @@
+.wall{
+  @include box(
+    $pivot-position-z: 'bottom',
+    $depth: $wall-depth,
+    $height: $wall-height,
+    $width: $wall-width,
+    $texture: "bouncy-wall.png",
+    $texture-top: "bouncy-wall-top.png",
+    $texture-size: cover
+  );
+  animation-duration: $animation-speed;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-delay: $animation-delay;
+}
+
+.wall--back{
+  animation-name: wallBack;
+  transform: translateY($snap-edge) rotateX(0deg);
+}
+
+.wall--left{
+  animation-name: wallLeft;
+  transform: translateX(-$snap-edge) rotateZ(90deg) rotateX(0);
+}
+
+.wall--right{
+  animation-name: wallRight;
+  transform: translateX($snap-edge) rotateZ(90deg) rotateX(0);
+}
+
+@keyframes wallBack{
+  0%{ transform: translateY($snap-edge) rotateX(0deg); }
+  50%{ transform: translateY($snap-edge) rotateX(-8deg); }
+  100%{ transform: translateY($snap-edge) rotateX(0deg); }
+}
+
+@keyframes wallRight{
+  0%{ transform: translateX($snap-edge) rotateZ(90deg) rotateX(0); }
+  50%{ transform: translateX($snap-edge) rotateZ(90deg) rotateX(8deg); }
+  100%{ transform: translateX($snap-edge) rotateZ(90deg) rotateX(0); }
+}
+
+@keyframes wallLeft{
+  0%{ transform: translateX(-$snap-edge) rotateZ(90deg) rotateX(0); }
+  50%{ transform: translateX(-$snap-edge) rotateZ(90deg) rotateX(-8deg); }
+  100%{ transform: translateX(-$snap-edge) rotateZ(90deg) rotateX(0); }
+}

@@ -1,0 +1,24 @@
+//Animation
+$animation-speed: 1s;
+$animation-delay: 2s;
+
+//Castle
+$castle-size: 400px;
+$grass-size: $castle-size + 240px;
+$grass-depth: 48px;
+
+//Floors
+$floor-section-size: $castle-size / 5;
+$floor-depth: 72px;
+
+//Pillars
+$pillar-depth: 128px;
+$pillar-thickness: 64px;
+
+//Walls
+$wall-depth: 116px;
+$wall-height: 32px;
+$wall-width: $castle-size - ($pillar-thickness * 2) + 24px;
+
+//Wall Snap
+$snap-edge: ($castle-size / 2) - ($pillar-thickness / 2);

@@ -1,0 +1,31 @@
+.robot{
+  @include box(
+    $pivot-position-z: 'bottom',
+    $depth: 27px,
+    $height: 54px,
+    $width: 27px,
+    $shadow-bottom: false,
+    $texture: "face-placeholder.jpg",
+    $texture-bottom: "robot-bottom.gif",
+    $texture-top: "robot-top.png",
+    $texture-left: "robot-side.png",
+    $texture-right: "robot-side.png",
+    $texture-front: "robot-cap.png",
+    $texture-back: "robot-cap.png",
+    $texture-size: cover
+  );
+  animation: robot $animation-speed infinite ease-in-out $animation-delay;
+  transform: translateY(-100px) translateX(100px) translateZ(-20px) rotateZ(45deg);
+
+  .face-bottom{
+    height: 78px;
+    width: 51px;
+    transform: translate3d(-50%, -50%, 13px);
+  }
+}
+
+@keyframes robot{
+  0%{ transform: translateY(-100px) translateX(100px) translateZ(-20px) rotateZ(45deg); }
+  50%{ transform: translateY(-100px) translateX(100px) translateZ(0) rotateZ(45deg); }
+  100%{ transform: translateY(-100px) translateX(100px) translateZ(-20px) rotateZ(45deg); }
+}

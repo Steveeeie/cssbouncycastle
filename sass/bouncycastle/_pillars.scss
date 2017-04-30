@@ -1,0 +1,59 @@
+.pillar{
+  @include box(
+    $pivot-position-z: 'bottom',
+    $depth: $pillar-depth,
+    $height: $pillar-thickness,
+    $width: $pillar-thickness,
+    $texture: 'bouncy-pillar.png',
+    $texture-top: 'bouncy-pillar-cap.png',
+    $texture-size: cover
+  );
+  animation-duration: $animation-speed;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-delay: $animation-delay;
+}
+
+.pillar-top-left{
+  animation-name: pillarTopLeft;
+  transform: translateY(-$snap-edge) translateX(-$snap-edge) rotateX(0) rotateY(0);
+}
+
+.pillar-top-right{
+  animation-name: pillarTopRight;
+  transform: translateY(-$snap-edge) translateX($snap-edge) rotateX(0) rotateY(0);
+}
+
+.pillar-bottom-left{
+  animation-name: pillarBottomLeft;
+  transform: translateY($snap-edge) translateX(-$snap-edge) rotateX(0) rotateY(0);
+}
+
+.pillar-bottom-right{
+  animation-name: pillarBottomRight;
+  transform: translateY($snap-edge) translateX($snap-edge) rotateX(0) rotateY(0);
+}
+
+@keyframes pillarTopLeft{
+  0%{ transform: translateY(-$snap-edge) translateX(-$snap-edge) rotateX(0) rotateY(0); }
+  50%{ transform: translateY(-$snap-edge) translateX(-$snap-edge) rotateX(6deg) rotateY(-6deg); }
+  100%{ transform: translateY(-$snap-edge) translateX(-$snap-edge) rotateX(0) rotateY(0); }
+}
+
+@keyframes pillarTopRight{
+  0%{ transform: translateY(-$snap-edge) translateX($snap-edge) rotateX(0) rotateY(0); }
+  50%{ transform: translateY(-$snap-edge) translateX($snap-edge) rotateX(6deg) rotateY(6deg); }
+  100%{ transform: translateY(-$snap-edge) translateX($snap-edge) rotateX(0) rotateY(0); }
+}
+
+@keyframes pillarBottomLeft{
+  0%{ transform: translateY($snap-edge) translateX(-$snap-edge) rotateX(0) rotateY(0); }
+  50%{ transform: translateY($snap-edge) translateX(-$snap-edge) rotateX(-6deg) rotateY(-6deg); }
+  100%{ transform: translateY($snap-edge) translateX(-$snap-edge) rotateX(0) rotateY(0); }
+}
+
+@keyframes pillarBottomRight{
+  0%{ transform: translateY($snap-edge) translateX($snap-edge) rotateX(0) rotateY(0); }
+  50%{ transform: translateY($snap-edge) translateX($snap-edge) rotateX(-6deg) rotateY(6deg); }
+  100%{ transform: translateY($snap-edge) translateX($snap-edge) rotateX(0) rotateY(0); }
+}

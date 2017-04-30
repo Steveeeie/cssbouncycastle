@@ -1,0 +1,106 @@
+.floor{
+  @include pivot;
+  transform: translateZ(-2px);
+}
+
+.floor__grass{
+  @include box(
+    $pivot-position-z: 'top',
+    $depth: $grass-depth,
+    $height: $grass-size,
+    $width: $grass-size,
+    $texture: "grass-side.png",
+    $texture-top: "grass.png",
+    $texture-size: cover
+  );
+  transform: translateZ(-$floor-depth - 40px);
+}
+
+.floor__section{
+  @include box(
+    $pivot-position-z: 'top',
+    $depth: $floor-depth,
+    $height: $castle-size,
+    $width: $castle-size / 5,
+    $texture: "bouncy-dark.png",
+    $texture-left: "bouncy-dark-side.png",
+    $texture-right: "bouncy-dark-side.png",
+    $texture-front: "bouncy-dark-cap.png",
+    $texture-back: "bouncy-dark-cap.png",
+    $texture-size: cover
+  );
+  animation-duration: $animation-speed;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-delay: $animation-delay;
+}
+
+.floor__section--teal{
+  @include box(
+    $pivot-position-z: 'top',
+    $depth: $floor-depth,
+    $height: $castle-size,
+    $width: $castle-size / 5,
+    $texture: "bouncy-teal.png",
+    $texture-left: "bouncy-teal-side.png",
+    $texture-right: "bouncy-teal-side.png",
+    $texture-front: "bouncy-teal-cap.png",
+    $texture-back: "bouncy-teal-cap.png",
+    $texture-size: cover
+  );
+}
+
+.floor__section--1{
+  animation-name: floorSection1;
+  transform: translateX( ($castle-size / 2)  - ($floor-section-size / 2)) translateZ(-8px);
+}
+
+.floor__section--2{
+  animation-name: floorSection2;
+  transform: translateX( ($castle-size / 2)  - ($floor-section-size / 2) - $floor-section-size) translateZ(-20px);
+}
+
+.floor__section--3{
+  animation-name: floorSection3;
+  transform: translateZ(-28px);
+}
+
+.floor__section--4{
+  animation-name: floorSection4;
+  transform: translateX( - (($castle-size / 2)  - ($floor-section-size / 2) - $floor-section-size)) translateZ(-16px);
+}
+
+.floor__section--5{
+  animation-name: floorSection5;
+  transform: translateX( - (($castle-size / 2)  - ($floor-section-size / 2))) translateZ(-8px);
+}
+
+@keyframes floorSection1{
+  0%{ transform: translateX( ($castle-size / 2)  - ($floor-section-size / 2)) translateZ(-8px); }
+  50%{ transform: translateX( ($castle-size / 2)  - ($floor-section-size / 2)) translateZ(-0); }
+  100%{ transform: translateX( ($castle-size / 2)  - ($floor-section-size / 2)) translateZ(-8px); }
+}
+
+@keyframes floorSection2{
+  0%{ transform: translateX( ($castle-size / 2)  - ($floor-section-size / 2) - $floor-section-size) translateZ(-20px); }
+  50%{ transform: translateX( ($castle-size / 2)  - ($floor-section-size / 2) - $floor-section-size) translateZ(0); }
+  100%{ transform: translateX( ($castle-size / 2)  - ($floor-section-size / 2) - $floor-section-size) translateZ(-20px); }
+}
+
+@keyframes floorSection3{
+  0%{ transform: translateZ(-28px); }
+  50%{ transform: translateZ(0); }
+  100%{ transform: translateZ(-28px); }
+}
+
+@keyframes floorSection4{
+  0%{ transform: translateX( - (($castle-size / 2)  - ($floor-section-size / 2) - $floor-section-size)) translateZ(-16px); }
+  50%{ transform: translateX( - (($castle-size / 2)  - ($floor-section-size / 2) - $floor-section-size)) translateZ(0); }
+  100%{ transform: translateX( - (($castle-size / 2)  - ($floor-section-size / 2) - $floor-section-size)) translateZ(-16px); }
+}
+
+@keyframes floorSection5{
+  0%{ transform: translateX( - (($castle-size / 2)  - ($floor-section-size / 2))) translateZ(-8px); }
+  50%{ transform: translateX( - (($castle-size / 2)  - ($floor-section-size / 2))) translateZ(0); }
+  100%{ transform: translateX( - (($castle-size / 2)  - ($floor-section-size / 2))) translateZ(-8px); }
+}

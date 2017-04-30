@@ -1,0 +1,23 @@
+html{
+  height: 100%;
+}
+
+body {
+  background-color: #252c36;
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4),rgba(0,0,0,0));
+  height: 100%;
+  overflow: hidden;
+  transform: scale(0.75);
+}
+
+.scene{
+  @include pivot;
+  transform: rotateX(45deg) rotateZ(225deg);
+  animation: sceneSpin 30s infinite linear;
+}
+
+@keyframes sceneSpin{
+  0%{ transform: rotateX(45deg) rotateZ(225deg); }
+  50%{ transform: rotateX(45deg) rotateZ(135deg); }
+  100%{ transform: rotateX(45deg) rotateZ(225deg); }
+}

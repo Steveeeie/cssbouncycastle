@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSS Bouncy Castle</title>
+    <link href="css/cssbouncycastle.min.css" rel="stylesheet"/>
+  </head>
+
+  <body>
+
+    <div class="scene">
+
+      <div class="bouncy-castle">
+
+        <div class="floor">
+          <div class="floor__section floor__section--1" data-obj-type="box"></div>
+          <div class="floor__section floor__section--teal floor__section--2" data-obj-type="box"></div>
+          <div class="floor__section floor__section--3" data-obj-type="box"></div>
+          <div class="floor__section floor__section--teal floor__section--4" data-obj-type="box"></div>
+          <div class="floor__section floor__section--5" data-obj-type="box"></div>
+          <div class="floor__grass" data-obj-type="box"></div>
+        </div>
+
+        <div class="rope rope--left"><div class="rope__face"></div></div>
+        <div class="rope rope--right"><div class="rope__face"></div></div>
+
+        <div class="wall wall--back" data-obj-type="box"></div>
+        <div class="wall wall--left" data-obj-type="box"></div>
+        <div class="wall wall--right" data-obj-type="box"></div>
+
+        <div class="pillar pillar-top-left" data-obj-type="box"></div>
+        <div class="pillar pillar-top-right" data-obj-type="box"></div>
+        <div class="pillar pillar-bottom-left" data-obj-type="box"></div>
+        <div class="pillar pillar-bottom-right" data-obj-type="box"></div>
+
+        <div class="steve">
+          <div class="steve__head" data-obj-type="box"></div>
+          <div class="steve__body" data-obj-type="box"></div>
+          <div class="steve__arm steve__arm--left" data-obj-type="box"></div>
+          <div class="steve__arm steve__arm--right" data-obj-type="box"></div>
+          <div class="steve__leg steve__leg--left" data-obj-type="box"></div>
+          <div class="steve__leg steve__leg--right" data-obj-type="box"></div>
+        </div>
+
+        <div class="robot" data-obj-type="box"></div>
+
+      </div>
+
+      <audio autoplay loop>
+        <source src="music/bouncy-music.mp3" type="audio/mp3">
+      </audio>
+
+    </div>
+
+    <script>
+      (function(){
+        //Append faces to all boxes.
+        var boxes = document.querySelectorAll('[data-obj-type="box"]');
+        for (var box = 0; box < boxes.length; box++) {
+          var faces = ['top', 'bottom', 'front', 'back', 'left', 'right'];
+          for (var face = 0; face < faces.length; face++) {
+            var faceMarkup = '<div class="face face-' + faces[face] + '"></div>';
+            boxes[box].insertAdjacentHTML('beforeend', faceMarkup);
+          }
+        }
+      })();
+    </script>
+
+  </body>
+</html>
